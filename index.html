@@ -13,41 +13,41 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="container">
+    <div class="container mt-5">
       <div class="row row-cards">
         <div class="col-12">
           <div class="card form">
             <div class="card-header">
-              <h4 class="card-title">Bike Details</h4>
+              <h6 class="card-title">Bike Details</h6>
             </div>
             <div class="card-body">
               <div class="row">
                 <form action="" class="row">
-                  <div class="col-5">
-                    <div class="mb-3">
-                      <label> Make </label>
-                      <div class="d-flex">
+                  <div class="col-md-6 col-12">
+                    <label> Make </label>
+                    <div class="row">
+                      <div class="col-9">
                         <input
                           type="text"
                           class="form-control"
                           id="bikeBrand"
                           placeholder="Eg: Honda"
                         />
-
-                        <button
-                          id="SearchBtn"
-                          class="btn btn-primary"
-                          type="button"
-                          onclick="fetchData()"
-                        >
-                          Search
-                        </button>
                       </div>
+                      <button
+                        id="SearchBtn"
+                        class="btn btn-outline-primary col-3"
+                        type="button"
+                        onclick="fetchData()"
+                      >
+                        Search
+                      </button>
                     </div>
                   </div>
-                  <div class="col-5">
+                  <div class="col-md-6 col-12">
                     <div class="mb-3">
                       <label> Model </label>
                       <select
@@ -55,84 +55,69 @@
                         id="select1"
                         onchange="bikeModel(this.value)"
                       >
-                        <option value="1">-- Select Model --</option>
+                        <!-- <option value="1">-- Select Model --</option> -->
                       </select>
                     </div>
                   </div>
-                  <div class="col-2">
-                    <div class="mb-3">
-                      <label> Year </label>
-                      <select
-                        class="form-control"
-                        id="select2"
-                        onchange="bikeYear(this.value)"
-                      >
-                        <option value="0">-- Select Year --</option>
-                      </select>
-                    </div>
-                  </div>
-                  <!-- <div class="col-12">
-                    <button
-                      class="btn btn-outline-primary"
-                      onclick="getDetails()"
-                      type="button"
-                    >
-                      Get Detail
-                    </button>
-                  </div> -->
                 </form>
               </div>
             </div>
           </div>
         </div>
-        <div class="col-12" id="info" style="display: none">
-          <div class="card form">
-            <div class="card-header">
-              <h4 id="infoTitle">Information</h4>
-            </div>
-            <div class="card-body">
-              <div class="row">
-                <div class="col-4 mb-2">
-                  <h6 class="datagrid-title">Clutch</h6>
-                  <div id="clutch"></div>
-                </div>
-                <br />
-                <div class="col-4 mb-3">
-                  <h6 class="datagrid-title">Cooling</h6>
-                  <div id="cooling"></div>
-                </div>
-                <div class="col-4 mb-3">
-                  <h6 class="datagrid-title">Dry Weight</h6>
-                  <div id="dry_weight"></div>
-                </div>
-                <div class="col-4 mb-3">
-                  <h6 class="datagrid-title">Engine</h6>
-                  <div id="engine"></div>
-                </div>
-                <div class="col-4 mb-3">
-                  <h6 class="datagrid-title">Power</h6>
-                  <div id="power"></div>
-                </div>
-                <div class="col-4 mb-3">
-                  <h6 class="datagrid-title">Torque</h6>
-                  <div id="torque"></div>
-                </div>
-                <div class="col-4 mb-3">
-                  <h6 class="datagrid-title">Valve</h6>
-                  <div id="valves_per_cylinder"></div>
-                </div>
-                <div class="col-4 mb-3">
-                  <h6 class="datagrid-title">Fuel Capacity</h6>
-                  <div id="fuel_capacity"></div>
-                </div>
-                <div class="col-4 mb-3">
-                  <h6 class="datagrid-title">Fuel Control</h6>
-                  <div id="fuel_control"></div>
-                </div>
-                <div class="col-4 mb-3">
-                  <h6 class="datagrid-title">Fuel System</h6>
-                  <div id="fuel_system"></div>
-                </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="col-12 mt-4" id="info" style="display: none">
+        <div class="card form">
+          <div class="card-header">
+            <h6 class="card-title" id="infoTitle"></h6>
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-4 mb-2">
+                <h6 class="datagrid-title">Displacement</h6>
+                <div id="displacement"></div>
+              </div>
+              <div class="col-4 mb-2">
+                <h6 class="datagrid-title">Clutch</h6>
+                <div id="clutch"></div>
+              </div>
+              <br />
+              <div class="col-4 mb-3">
+                <h6 class="datagrid-title">Cooling</h6>
+                <div id="cooling"></div>
+              </div>
+              <div class="col-4 mb-3">
+                <h6 class="datagrid-title">Dry Weight</h6>
+                <div id="dry_weight"></div>
+              </div>
+              <div class="col-4 mb-3">
+                <h6 class="datagrid-title">Engine</h6>
+                <div id="engine"></div>
+              </div>
+              <div class="col-4 mb-3">
+                <h6 class="datagrid-title">Power</h6>
+                <div id="power"></div>
+              </div>
+              <div class="col-4 mb-3">
+                <h6 class="datagrid-title">Torque</h6>
+                <div id="torque"></div>
+              </div>
+              <div class="col-4 mb-3">
+                <h6 class="datagrid-title">Valve</h6>
+                <div id="valves_per_cylinder"></div>
+              </div>
+              <div class="col-4 mb-3">
+                <h6 class="datagrid-title">Fuel Capacity</h6>
+                <div id="fuel_capacity"></div>
+              </div>
+              <div class="col-4 mb-3">
+                <h6 class="datagrid-title">Fuel Control</h6>
+                <div id="fuel_control"></div>
+              </div>
+              <div class="col-4 mb-3">
+                <h6 class="datagrid-title">Fuel System</h6>
+                <div id="fuel_system"></div>
               </div>
             </div>
           </div>
